@@ -15,7 +15,7 @@ master:
   # JenkinsOpts: ""
   serviceType: NodePort # Use ClusterIP to use the ingress controller.
   installPlugins:
-    - kubernetes:1.13.7
+    - kubernetes:1.19.2
     - workflow-job:2.32
     - workflow-aggregator:2.6
     - credentials-binding:1.18
