@@ -4,7 +4,7 @@ podTemplate(containers: [
 
   node(POD_LABEL) {
     stage('Build a Maven project') {
-      scm checkout
+      //scm checkout
       container('maven') {
           sh 'mvn -version'
       }
