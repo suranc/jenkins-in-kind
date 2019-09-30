@@ -16,19 +16,19 @@ master:
   serviceType: NodePort # Use ClusterIP to use the ingress controller.
   installPlugins:
     - kubernetes:1.19.2
-    - workflow-job:2.32
+    - workflow-job:2.35
     - workflow-aggregator:2.6
-    - credentials-binding:1.18
-    - role-strategy:2.9.0
-    - github:1.29.3
+    - credentials-binding:1.20
+    - role-strategy:2.14
+    - github:1.29.4
     - github-oauth:0.33
-    - git:3.10.0
+    - git:3.12.1
     - blueocean:1.19.0
-    - rocketchatnotifier:1.3.1
-    - ws-cleanup:0.36
-    - pipeline-utility-steps:2.2.0
+    - rocketchatnotifier:1.4.5
+    - ws-cleanup:0.37
+    - pipeline-utility-steps:2.3.1
     - ldap:1.20
-    - matrix-auth:2.3
+    - matrix-auth:2.4.2
   ingress:
     enabled: false
     hostName: your.name.tld
