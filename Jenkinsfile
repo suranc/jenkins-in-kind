@@ -1,25 +1,12 @@
+podTemplate(containers: [
+  containerTemplate(name: 'maven', image: 'maven:3.3.9-jdk-8-alpine', ttyEnabled: true, command: 'cat')
+  ]) {
 
-pipeline {
-  agent {
-    kubernetes {
-      yaml """
-apiVersion: v1
-kind: Pod
-spec:
-  containers:
-  - name: maven
-    image: maven:latest
-    command: ['cat']
-    tty: true
-"""
-    }
-  }
-  stages {
-    stage('Run maven') {
-      steps {
-        container('maven') {
+  node(POD_LABEL) {
+    stage('Build a Maven project') {
+      scm checkout
+      container('maven') {
           sh 'mvn -version'
-        }
       }
     }
   }

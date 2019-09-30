@@ -9,7 +9,7 @@ kubectl apply -f namespace-service-account-role-rolebinding.yaml
 kubectl config set-context --current --namespace malgoof
 
 # Install tiller
-helm init --service-account malgoof --tiller-namespace malgoof
+helm init --tiller-namespace malgoof
 
 # Check if tiller is ready
 helm version --tiller-namespace malgoof
