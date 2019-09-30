@@ -3,8 +3,10 @@ podTemplate(label: 'mypod', containers: [
   ]) {
 
   node('mypod') {
+    stage('Checkout') {
+        checkout scm
+    }
     stage('Build a Maven project') {
-      scm checkout
       container('maven') {
           sh 'mvn -version'
       }
